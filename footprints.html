@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="官洪辉的个人足迹：在地图与时间线上记录去过的地方。">
+  <title>个人足迹 · 官洪辉</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://basemaps.cartocdn.com">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./footprints.css">
+</head>
+<body class="footprints-page">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-name" href="./index.html">官洪辉</a>
+      <button class="menu-button" aria-label="打开导航" aria-expanded="false">&#9776;</button>
+      <nav aria-label="主导航">
+        <a href="./index.html">个人主页</a><a class="active" href="./footprints.html">个人足迹</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="footprint-hero">
+      <p class="eyebrow">MY JOURNEY</p>
+      <h1>走过的路，构成了现在的我。</h1>
+      <p class="hero-copy">从一枚定位点到一段旅程，把日常与远方留在同一张地图上。</p>
+      <div class="journey-stats" aria-label="足迹概览">
+        <div><strong id="stat-years">—</strong><span>记录年份</span></div>
+        <div><strong id="stat-points">—</strong><span>原始足迹</span></div>
+        <div><strong id="stat-photos">—</strong><span>照片位置</span></div>
+        <div><strong id="stat-cities">—</strong><span>到访城市</span></div>
+      </div>
+    </section>
+
+    <section class="map-section" aria-labelledby="map-heading">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE MAP</p><h2 id="map-heading">我的足迹图</h2></div>
+        <div class="map-legend"><span><i class="line-key"></i>移动轨迹</span><span><i class="photo-key"></i>照片位置</span></div>
+      </div>
+      <div class="map-frame">
+        <div id="footprint-map" aria-label="个人足迹交互地图"></div>
+        <div class="map-controls" aria-label="地图筛选">
+          <button class="filter-button active" data-layer="all">全部</button>
+          <button class="filter-button" data-layer="track">仅轨迹</button>
+          <button class="filter-button" data-layer="photos">仅照片</button>
+        </div>
+        <p id="map-status" class="map-status">正在载入足迹…</p>
+      </div>
+      <p class="map-note">地图对完整数据做了适度抽样，以兼顾轨迹细节和浏览性能；点击照片点可查看记录时间与坐标。</p>
+    </section>
+
+    <section class="timeline-section" aria-labelledby="timeline-heading">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE TIMELINE</p><h2 id="timeline-heading">沿时间抵达</h2></div>
+        <div id="year-filters" class="year-filters" aria-label="按年份筛选"></div>
+      </div>
+      <div id="journey-timeline" class="journey-timeline"></div>
+    </section>
+  </main>
+
+  <footer><p>&copy; <span id="year"></span> 官洪辉 · 足迹数据更新于 2026.08</p></footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="./assets/data/footprints-data.js"></script>
+  <script src="./footprints.js"></script>
+</body>
+</html>
