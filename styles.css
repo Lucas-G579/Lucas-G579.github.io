@@ -4,25 +4,38 @@
 .contact-list li>span{display:block;width:auto!important;flex:1}.contact-action{display:flex;align-items:flex-start;gap:9px;width:100%}.contact-action span{color:var(--link)}
 .layout{grid-template-columns:270px minmax(0,760px);gap:47px}.contact-action span{display:block!important;width:auto!important;min-width:0;flex:1;white-space:nowrap;font-size:12px}.contact-action{overflow:visible!important}.contact-list>li:first-child>span{white-space:nowrap}@media(max-width:760px){.layout{display:block}.contact-action span{white-space:normal;font-size:13px}}
 
-.organization-name {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+.institution-entry {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: start;
+}
+.institution-body {
+  grid-column: 2;
   min-width: 0;
 }
 .organization-logo {
   display: block;
-  flex: 0 0 48px;
-  width: 48px;
-  height: 48px;
+  grid-column: 1;
+  grid-row: 1;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
 }
 .organization-logo-cummins {
   padding: 4px;
 }
-#education .entry-head, #experience .entry-head {
-  align-items: center;
-  margin-bottom: 10px;
+.institution-body .entry-head {
+  align-items: baseline;
+  margin-bottom: 4px;
+  gap: 16px;
+}
+.institution-body .entry-head strong {
+  font-size: 17px;
+}
+.content .institution-body > p {
+  color: #555;
+  margin: 4px 0;
 }
 .content .internship-projects {
   list-style: none;
@@ -46,7 +59,15 @@
   line-height: 1.7;
 }
 @media (max-width: 760px) {
-  #education .entry-head > span {
-    margin: 6px 0 0 62px;
+  .institution-entry {
+    grid-template-columns: 36px minmax(0, 1fr);
+    column-gap: 12px;
+  }
+  .organization-logo {
+    width: 36px;
+    height: 36px;
+  }
+  .institution-body .entry-head > span {
+    margin: 2px 0 0;
   }
 }
